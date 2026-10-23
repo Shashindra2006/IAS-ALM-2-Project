@@ -1,0 +1,18 @@
+@import "./App.css";
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}

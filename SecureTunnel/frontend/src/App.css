@@ -1,0 +1,623 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #e8edf8;
+  background: #090e19;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-optical-sizing: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% 0%, #172743 0%, transparent 50%),
+    #090e19;
+}
+
+button {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.topbar {
+  height: 78px;
+  padding: 0 7%;
+  border-bottom: 1px solid #202b40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0b1220dd;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #67e8f9, #5488ff);
+  color: #07101e;
+  font: 700 24px "Space Grotesk", sans-serif;
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand strong {
+  font: 700 19px "Space Grotesk", sans-serif;
+}
+
+.brand small {
+  margin-top: 3px;
+  color: #8190aa;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #a5b4cb;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #55e4a3;
+  box-shadow: 0 0 12px #55e4a366;
+}
+
+.main-content {
+  max-width: 1150px;
+  margin: auto;
+  padding: 55px 28px 24px;
+}
+
+.hero {
+  max-width: 700px;
+  margin-bottom: 35px;
+}
+
+.eyebrow {
+  color: #6cd9f5;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  margin: 14px 0;
+  font: 700 clamp(32px, 5vw, 49px) "Space Grotesk", sans-serif;
+  letter-spacing: -1.8px;
+}
+
+.hero p,
+.message-card p,
+.log-content p {
+  color: #95a4bc;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.hero p {
+  max-width: 590px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 24px;
+}
+
+.stat-card,
+.workspace,
+.log-section {
+  border: 1px solid #243149;
+  border-radius: 15px;
+  background: #101827dd;
+}
+
+.stat-card {
+  padding: 19px 21px;
+}
+
+.stat-card span,
+.stat-card strong {
+  display: block;
+}
+
+.stat-card span {
+  margin-bottom: 11px;
+  color: #8797b1;
+  font-size: 10px;
+  letter-spacing: 1.3px;
+}
+
+.stat-card strong {
+  font: 600 16px "Space Grotesk", sans-serif;
+}
+
+.success-text {
+  color: #5be2a2;
+}
+
+.workspace,
+.log-section {
+  padding: 26px;
+  margin-bottom: 22px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-heading h2 {
+  margin: 8px 0 0;
+  font: 600 22px "Space Grotesk", sans-serif;
+}
+
+.step-counter {
+  color: #a3b1c7;
+  border: 1px solid #303e55;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.connection-stage {
+  min-height: 280px;
+  display: grid;
+  grid-template-columns: 135px minmax(0, 1fr) 135px;
+  align-items: center;
+  gap: 20px;
+  margin: 25px 0;
+}
+
+.endpoint {
+  text-align: center;
+  padding: 17px 8px;
+  border: 1px solid #29364c;
+  border-radius: 13px;
+  background: #131e30;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.endpoint-active {
+  border-color: #52c8ef;
+  box-shadow: 0 0 24px #52c8ef12;
+  transform: translateY(-3px);
+}
+
+.endpoint-icon {
+  width: 57px;
+  height: 57px;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: #16334a;
+  color: #6ce1fa;
+  font-size: 30px;
+}
+
+.server-icon {
+  color: #9aabff;
+  background: #272746;
+}
+
+.endpoint h3 {
+  margin: 13px 0 4px;
+  font: 600 16px "Space Grotesk", sans-serif;
+}
+
+.endpoint p {
+  margin: 0 0 12px;
+  color: #8797b1;
+  font-size: 12px;
+}
+
+.endpoint-tag {
+  color: #7f91ad;
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.message-lane {
+  min-width: 0;
+  text-align: center;
+}
+
+.connection-line {
+  height: 2px;
+  position: relative;
+  margin: 0 0 17px;
+  background: linear-gradient(90deg, #47c8ee, #7985ff);
+}
+
+.line-dot {
+  position: absolute;
+  left: 15%;
+  top: -4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #6ce1fa;
+  box-shadow: 0 0 12px #6ce1fa;
+  animation: travel 3s linear infinite;
+}
+
+.second-dot {
+  animation-delay: 1.5s;
+}
+
+@keyframes travel {
+  from {
+    left: 5%;
+  }
+
+  to {
+    left: 95%;
+  }
+}
+
+.message-card {
+  min-height: 153px;
+  text-align: left;
+  padding: 18px;
+  border: 1px solid #2b3d56;
+  border-radius: 12px;
+  background: #0c1525;
+}
+
+.message-label {
+  display: inline-block;
+  color: #6cd9f5;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.message-card strong {
+  display: block;
+  margin-top: 10px;
+  font: 600 16px "Space Grotesk", sans-serif;
+}
+
+.message-card p {
+  margin-bottom: 0;
+  font-size: 12px;
+}
+
+.lane-caption {
+  margin-top: 14px;
+  color: #6f819c;
+  font-size: 9px;
+  letter-spacing: 1.2px;
+}
+
+.progress-track {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 9px;
+  margin: 30px 0;
+}
+
+.progress-item {
+  min-width: 0;
+  color: #8493ab;
+  text-align: center;
+  font-size: 10px;
+}
+
+.progress-number {
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 10px;
+  border: 1px solid #34435b;
+  border-radius: 50%;
+  background: #111c2d;
+}
+
+.progress-item span {
+  display: block;
+  line-height: 1.5;
+}
+
+.progress-done .progress-number {
+  color: #061b16;
+  border-color: #55e2a1;
+  background: #55e2a1;
+}
+
+.progress-current .progress-number {
+  border-color: #6cd9f5;
+  color: #6cd9f5;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 22px;
+  border-top: 1px solid #26344a;
+}
+
+.button {
+  border-radius: 9px;
+  padding: 13px 19px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.button-primary {
+  color: #06111d;
+  border: 0;
+  background: linear-gradient(100deg, #68dff3, #8196ff);
+}
+
+.button-secondary {
+  color: #dce5f5;
+  border: 1px solid #35435a;
+  background: #172235;
+}
+
+.error-banner,
+.success-banner {
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 9px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.error-banner {
+  border: 1px solid #773b4b;
+  background: #351b28;
+  color: #ffb2bf;
+}
+
+.success-banner {
+  border: 1px solid #27684f;
+  background: #112b25;
+  color: #7af0ba;
+}
+
+.empty-log {
+  margin-top: 20px;
+  padding: 25px;
+  border: 1px dashed #334158;
+  border-radius: 10px;
+  color: #8595af;
+  text-align: center;
+  font-size: 12px;
+}
+
+.log-list {
+  margin-top: 23px;
+}
+
+.log-entry {
+  display: flex;
+  gap: 16px;
+  padding: 19px 0;
+  border-bottom: 1px solid #263249;
+}
+
+.log-entry:last-child {
+  border-bottom: 0;
+}
+
+.log-number {
+  flex: 0 0 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #30445c;
+  border-radius: 10px;
+  color: #6cd9f5;
+  background: #14243a;
+  font-size: 12px;
+}
+
+.log-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.log-title-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.log-title-row strong {
+  font-size: 13px;
+}
+
+.log-title-row time {
+  color: #788aa5;
+  font-size: 10px;
+}
+
+.log-content p {
+  margin: 8px 0 0;
+  font-size: 12px;
+}
+
+details {
+  margin-top: 12px;
+  font-size: 11px;
+}
+
+summary {
+  color: #76d8f3;
+  cursor: pointer;
+}
+
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 12px;
+  border-radius: 8px;
+  background: #080d17;
+  color: #a8d9f5;
+  font-size: 10px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.verification {
+  margin-top: 12px;
+  color: #70e8b0;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 20px 0;
+  color: #7888a0;
+  font-size: 10px;
+}
+
+@media (max-width: 720px) {
+  .topbar {
+    padding: 0 20px;
+  }
+
+  .topbar-right {
+    font-size: 8px;
+  }
+
+  .main-content {
+    padding: 35px 15px 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .connection-stage {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .message-lane {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .endpoint {
+    grid-row: 1;
+  }
+
+  .progress-track {
+    gap: 4px;
+  }
+
+  .progress-item {
+    font-size: 9px;
+  }
+
+  .workspace,
+  .log-section {
+    padding: 17px;
+  }
+
+  .section-heading h2 {
+    font-size: 19px;
+  }
+
+  .step-counter {
+    padding: 7px;
+    font-size: 9px;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+}
+.protocol-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.protocol-tab {
+  padding: 16px 18px;
+  border: 1px solid #29364c;
+  border-radius: 12px;
+  background: #101827;
+  color: #dce5f5;
+  cursor: pointer;
+  text-align: left;
+  font: 600 15px "Space Grotesk", sans-serif;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.protocol-tab span {
+  display: block;
+  margin-top: 7px;
+  color: #8495af;
+  font: 400 11px "DM Sans", sans-serif;
+}
+
+.protocol-tab:hover,
+.protocol-tab.selected {
+  border-color: #62d9f5;
+  background: #13263a;
+}
+
+@media (max-width: 480px) {
+  .protocol-tab {
+    padding: 12px;
+    font-size: 13px;
+  }
+}
